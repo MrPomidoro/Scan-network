@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/status.css' %}"> {% endblock %} {% block info %}
+<div class='text-end'>
+    <div style="margin-bottom: 10px; font-size: 20px; margin-right: 25px; margin-top: 35px;">Если данные отображаются не в полном объеме,<br> проведите повторное сканирование </div>
+    <form method="post" style="margin-left: 15px;margin-bottom: 0;">
+        {% csrf_token %} {{ form.name }} <br> {{ form.input }} <br>
+        <button type="submit " class="btn btn-dark" style='width: 13%;margin-top: 0; margin-right: 35px;' name='global'>Полное сканирование подсети</button>
+    </form>
+    <button type="button " class="btn btn-dark send " style="margin-right: 35px; margin-top: 10px; width: 13%;" name='top'>Быстрое сканирование</button>
+</div>
+<h1 class="m-3 ">Список подсетей</h1>
+<table class="container table table-striped text-center ">
+    <thead>
+        <tr>
+            <th scope="col ">Ip</th>
+            <th scope="col ">Hostname</th>
+            <th scope="col ">Os/Device</th>
+            <th scope="col ">Status</th>
+            <th scope="col ">Delay(ms)</th>
+            <th scope="col ">Mac</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in list_ip %} {% for foo in list %} {% if c == foo.ip %}
+        <tr>
+            <th scope="row "><a href="#">{{ foo.ip }}</a></th>
+            <td>{{ foo.hostname }}</td>
+            <td>{{ foo.os }}</td>
+            {% if foo.status == 'G'%}
+            <td class="status online text-center "></td>
+            {% elif foo.status == 'B' %}
+            <td class="status invisible "></td>
+            {% else %}
+            <td class="status offline "></td>
+            {%endif%}
+
+            <td>{{ foo.delay }} м/c</td>
+            <td>{{ foo.mac }}</td>
+        </tr>
+
+
+        {% endif %} {% endfor %} {% endfor %}
+    </tbody>
+</table>
+{% endblock %} {% block script %}
+<script src="{% static 'reload.js' %} "></script>
+{% endblock %}
