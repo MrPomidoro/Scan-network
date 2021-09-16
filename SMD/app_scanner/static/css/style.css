@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+.head {
+    height: 45px;
+    width: 100%;
+    background: rgb(238, 238, 238);
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.head div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.head div .logo {
+    margin-left: 40px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+    color: #000;
+}
+
+.head nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.head nav ul {
+    display: flex;
+    margin-right: 20px;
+    padding: 0;
+}
+
+.head nav ul li {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.head nav ul li a {
+    color: #333333;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.helptext {
+    display: none;
+}
+
+.register form p {
+    display: flex;
+    flex-direction: column;
+}
+
+input::hover {
+    box-shadow: 0 5px 5px rgba(129, 114, 114, 0.548);
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
