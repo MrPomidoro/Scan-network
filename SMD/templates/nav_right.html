@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block nav %}
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+    $(document).ready(function() {
+    let btn = document.querySelector('#btn');
+    let sidenav = document.querySelector('.head');
+    let message = document.querySelector('#mess');
+    let right = document.querySelector('.nav_right');
+    let close_right_nav = document.querySelector('#close');
+    let del = document.querySelector('.delete');
+
+
+    btn.onclick = function() {
+        sidenav.classList.toggle('active')
+    };
+
+    message.onclick = function() {
+        right.classList.toggle('activate')
+    };
+
+    close_right_nav.onclick = function() {
+        right.classList.remove('activate')
+        console.log(1)
+    };
+
+});
+</script>
+
+{% endblock %}
